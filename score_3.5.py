@@ -8,8 +8,10 @@ import json
 import http.cookiejar
 
 print('This a python application for JluScore')
-username = str(input('your username:'))
-password = str(input('your password:'))
+#username = str(input('your username:'))
+#password = str(input('your password:'))
+username = '12130402'
+password = '141841'
 password = 'UIMS'+username+password
 password = password.encode('utf-8')
 password = hashlib.md5(password).hexdigest()
@@ -90,7 +92,11 @@ for item in items:
 #    print item['kcmc']
 #    #print str(item['termId'])
 #     print item['studName']+' '+item['xh']+' '+item['cj']+' '+str(item['gpoint'])+' '+item['kcmc']
-     text = item['cj']+'        '+str(item['gpoint'])+'        '+item['kcmc']+'\n'
+#     text = item['cj']+'        '+str(item['gpoint'])+'        '+item['kcmc']+'\n'
+     if item['cj'] == '优秀' or item['cj'] == '良好' or item['cj'] == '及格':
+         text = item['cj'].ljust(18)+str(item['gpoint']).ljust(20)+item['kcmc'].ljust(20)+'\n'
+     else:   
+         text = item['cj'].ljust(20)+str(item['gpoint']).ljust(20)+item['kcmc'].ljust(20)+'\n'
 #     print text
      finalscore.write(text)
 finalscore.close()
