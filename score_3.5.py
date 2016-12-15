@@ -10,8 +10,6 @@ import http.cookiejar
 print('This a python application for JluScore')
 #username = str(input('your username:'))
 #password = str(input('your password:'))
-username = '12130402'
-password = '141841'
 password = 'UIMS'+username+password
 password = password.encode('utf-8')
 password = hashlib.md5(password).hexdigest()
